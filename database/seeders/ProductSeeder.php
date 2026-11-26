@@ -59,6 +59,30 @@ class ProductSeeder extends Seeder
                 'image_asset' => 'woman pants.jpg',
             ],
             [
+                'category' => 'outerwear',
+                'name' => 'Relaxed Tailored Blazer',
+                'slug' => 'relaxed-tailored-blazer',
+                'description' => 'A clean-lined blazer designed for relaxed, polished layering.',
+                'price' => 429000,
+                'stock' => 8,
+                'size' => 'S, M, L, XL',
+                'color' => 'Black',
+                'is_featured' => false,
+                'image_asset' => 'balzer.jpg',
+            ],
+            [
+                'category' => 'outerwear',
+                'name' => 'Soft Structure Blazer',
+                'slug' => 'soft-structure-blazer',
+                'description' => 'A light-toned blazer with an easy shape for everyday layering.',
+                'price' => 429000,
+                'stock' => 8,
+                'size' => 'S, M, L, XL',
+                'color' => 'Ivory',
+                'is_featured' => false,
+                'image_asset' => 'jas.jpg',
+            ],
+            [
                 'category' => 'tops',
                 'name' => 'Basic Cotton Shirt',
                 'slug' => 'basic-cotton-shirt',
@@ -80,12 +104,13 @@ class ProductSeeder extends Seeder
 
                 if (is_file($sourcePath)) {
                     $imageContents = file_get_contents($sourcePath);
+                    $imagePath = 'products/'.$product['slug'].'.jpg';
 
-                    if ($imageContents === false || ! Storage::disk('public')->put('products/wide-leg-trousers.jpg', $imageContents)) {
-                        throw new RuntimeException('Unable to seed the Wide Leg Trousers product image.');
+                    if ($imageContents === false || ! Storage::disk('public')->put($imagePath, $imageContents)) {
+                        throw new RuntimeException(sprintf('Unable to seed image for product "%s".', $product['name']));
                     }
 
-                    $product['image'] = 'products/wide-leg-trousers.jpg';
+                    $product['image'] = $imagePath;
                 }
             }
 

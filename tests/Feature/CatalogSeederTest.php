@@ -24,12 +24,16 @@ class CatalogSeederTest extends TestCase
         ]);
 
         $this->assertSame(4, Category::query()->count());
-        $this->assertSame(5, Product::query()->count());
+        $this->assertSame(7, Product::query()->count());
         $this->assertTrue(Product::query()->firstOrFail()->category()->exists());
-        $this->assertSame(
-            'products/wide-leg-trousers.jpg',
-            Product::query()->where('slug', 'wide-leg-trousers')->value('image'),
-        );
-        Storage::disk('public')->assertExists('products/wide-leg-trousers.jpg');
+
+        foreach ([
+            'wide-leg-trousers' => 'products/wide-leg-trousers.jpg',
+            'relaxed-tailored-blazer' => 'products/relaxed-tailored-blazer.jpg',
+            'soft-structure-blazer' => 'products/soft-structure-blazer.jpg',
+        ] as $slug => $imagePath) {
+            $this->assertSame($imagePath, Product::query()->where('slug', $slug)->value('image'));
+            Storage::disk('public')->assertExists($imagePath);
+        }
     }
 }
