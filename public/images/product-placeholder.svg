@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="853" viewBox="0 0 640 853" fill="none">
+  <rect width="640" height="853" fill="#E8E4DC"/>
+  <rect x="36" y="36" width="568" height="781" stroke="#D2CCC1"/>
+  <ellipse cx="323" cy="699" rx="169" ry="22" fill="#C9C1B5" fill-opacity=".52"/>
+  <path d="M227 213L272 185C294 173 311 165 322 165C333 165 350 173 372 185L417 213L481 303L429 337L400 298V650H244V298L215 337L163 303L227 213Z" fill="#F5F3EE"/>
+  <path d="M272 185C282 221 296 244 322 244C348 244 362 221 372 185" stroke="#D3CDC2" stroke-width="3"/>
+  <path d="M321 245V647" stroke="#D3CDC2" stroke-width="2"/>
+  <path d="M265 372H302M342 372H379" stroke="#AAA69D" stroke-width="2"/>
+  <path d="M54 755H586" stroke="#C5BDAF"/>
+  <text x="55" y="786" fill="#77766F" font-family="Arial,sans-serif" font-size="11" letter-spacing="2">SÉLOR / PRODUCT STUDY</text>
+</svg>
